@@ -1,0 +1,232 @@
+/* Color Scheme */
+:root {
+    --primary-color: #2C3639;
+    --secondary-color: #A27B5C;
+    --accent-color: #DCD7C9;
+    --text-color: #3F4E4F;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: var(--accent-color);
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+}
+
+.feature h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Menu Page */
+.menu-page {
+    padding: 6rem 2rem 2rem;
+}
+
+.menu-section {
+    margin-bottom: 3rem;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.menu-item {
+    padding: 1.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+.menu-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    display: block;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+/* Administration Page */
+.admin-page {
+    padding: 6rem 2rem 2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Contact Page */
+.contact-page {
+    padding: 6rem 2rem 2rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+}
+
+.contact-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
